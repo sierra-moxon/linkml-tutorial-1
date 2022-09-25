@@ -26,10 +26,10 @@ linkml:topValue a owl:DatatypeProperty ;
     dcterms:license "MIT" ;
     dcterms:title "linkml-tutorial" ;
     rdfs:seeAlso "https://sierra-moxon.github.io/linkml-tutorial" ;
-    linkml:generation_date "2022-09-24T19:32:55" ;
+    linkml:generation_date "2022-09-25T07:32:54" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "linkml_tutorial.yaml" ;
-    linkml:source_file_date "2022-09-24T19:31:53" ;
+    linkml:source_file_date "2022-09-24T20:33:29" ;
     linkml:source_file_size 2224 .
 
 linkml_tutorial:PersonCollection a owl:Class,
@@ -123,6 +123,10 @@ linkml_tutorial:Person a owl:Class,
     rdfs:label "Person" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Date ;
+            owl:onProperty schema:birthDate ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
             owl:onProperty linkml_tutorial:age_in_years ],
         [ a owl:Restriction ;
@@ -133,10 +137,6 @@ linkml_tutorial:Person a owl:Class,
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml_tutorial:PersonStatus ;
             owl:onProperty linkml_tutorial:vital_status ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Date ;
-            owl:onProperty schema:birthDate ],
         linkml_tutorial:NamedThing ;
     skos:definition "Represents a Person" .
 
